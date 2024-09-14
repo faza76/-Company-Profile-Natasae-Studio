@@ -15,10 +15,14 @@
 
 # production
 /build
+/out
+/public/portofolio
+/public/portfolioImage
 
 # misc
 .DS_Store
 *.pem
+*.png
 
 # debug
 npm-debug.log*
