@@ -1,33 +1,252 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  
+@layer base {
+    body {
+       @apply bg-primary text-white leading-loose;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+	.timeline {
+		@apply
+			border-l-4 border-red-800
+			ml-3 mt-3 py-16
+			space-y-36
+	}
+
+	.dot {
+		@apply
+			absolute top-1 -left-9
+			bg-red-700
+			h-10 w-10
+			rounded-full
+			border-4 border-neutral-950
+	}
+}
+
+.cutoff-text {
+	--max-lines: 10;
+	--line-height: 1.4;
+
+	max-height: calc(var(--max-lines) * 1em * var(--line-height));
+	line-height: var(--line-height);
+
+	overflow: hidden;
+	position: relative;
+}
+
+.cutoff-text:has(+ .expand-btn:not(:checked)):before {
+	content: "";
+	position: absolute;
+	height: calc(2em * var(--line-height));
+	width: 100%;
+	bottom: 0;
+	pointer-events: none;
+	background: linear-gradient(to bottom, transparent, theme('colors.gray.100'));
+}
+
+.expand-btn {
+	appearance: none;
+	cursor: pointer;
+	border: 1px solid black;
+}
+
+.expand-btn:hover {
+	background-color: theme('colors.gray.100');
+}
+
+.expand-btn::before {
+	content: "Lihat semua";
+}
+
+.expand-btn:checked:before {
+	content: "Lebih Sedikit";
+}
+
+.cutoff-text:has(+ .expand-btn:checked)	{
+	max-height: none;
+}
+
+
+
+.preloader {
+	overflow: hidden;
+	opacity: 1;
+}
+
+.preloader__background {
+	position: fixed;
+	inset: 0;
+	z-index: 20;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+
+.preloader__text {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	line-height: 1;
+	z-index: 30;
+	color: white;
+}
+
+.preloader__text span {
+	display: block;
+}
+
+.line-wrapper {
+	overflow: hidden;
+}
+
+.swiper-container{
+	position: relative;
+	height: 400px;
+	@media (min-width: theme("screens.sm")) {
+		height: 800px;
+	}
+}
+
+.swiper {
+	width: 100%;
+	height: 40%;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+  
+	/* Center slide text vertically */
+	display: flex;
+	justify-content: center;
+	align-items: center;
   }
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+  .swiper {
+	width: 100%;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  
+  .swiper-slide {
+	background-size: cover;
+	background-position: center;
+  }
+
+  .mySwiper2 {
+	height: 80%;
+	width: 100%;
 }
+
+  .mySwiper {
+	height: 20%;
+	box-sizing: border-box;
+	padding: 10px 0;
+  }
+  
+  .mySwiper .swiper-slide {
+	width: 25%;
+	height: 100%;
+	opacity: 0.4;
+  }
+  
+  .mySwiper .swiper-slide-thumb-active {
+	opacity: 1;
+  }
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* Blog Styling */
+
+.blog-post {
+	max-width: 800px;
+	margin: auto;
+	padding: 20px;
+	line-height: 1.6;
+  }
+  
+  .blog-post h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  .blog-post h2 {
+	font-size: 2rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  .blog-post h3 {
+	font-size: 1.75rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  .blog-post p {
+	margin: 0.5rem 0;
+  }
+  
+  .blog-post ul {
+	padding-left: 20px;
+  }
+  
+  .blog-post li {
+	margin: 0.5rem 0;
+  }
+  
+  .blog-post blockquote {
+	border-left: 4px solid #ddd;
+	padding-left: 1rem;
+	margin: 1rem 0;
+	font-style: italic;
+  }
+  
+  .blog-post code {
+	background: #f4f4f4;
+	padding: 0.2rem 0.4rem;
+	border-radius: 4px;
+  }
+  
+  .blog-post pre {
+	background: #f4f4f4;
+	padding: 1rem;
+	border-radius: 4px;
+	overflow-x: auto;
+  }
+  
+  .blog-post img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 1rem 0;
+  }
+
+  .Mui-active {
+	color:#fff;
+  }
