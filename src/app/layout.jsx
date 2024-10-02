@@ -6,6 +6,7 @@ import PageTransition from "@/components/PageTansition";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 
+
 const inter = Inter({ 
   subsets: ["latin"], 
   weight: ["100", "200", "300", "400" ,"500", "600", "700", "800"],

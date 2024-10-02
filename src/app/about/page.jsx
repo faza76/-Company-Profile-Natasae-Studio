@@ -12,12 +12,47 @@ const About = () => {
     Aos.init({ duration: 1000 }); // Initialize AOS with a duration of 1000ms
   }, []);
 
-  const teamMembers = Array.from({ length: 8 }).map((_, index) => ({
-    name: `Team Member ${index + 1}`,
-    role: `Role ${index + 1}`,
-    image: `https://via.placeholder.com/800x600?text=Person+${index + 1}`,
-    bio: `Brief bio for team member ${index + 1}. Describe their role and contributions.`
-  }));
+  // const teamMembers = Array.from({ length: 8 }).map((_, index) => ({
+  //   name: `Team Member ${index + 1}`,
+  //   role: `Role ${index + 1}`,
+  //   image: `https://via.placeholder.com/800x600?text=Person+${index + 1}`,
+  //   bio: `Brief bio for team member ${index + 1}. Describe their role and contributions.`
+  // }));
+  const values1 = [
+    {
+      no: '01',
+      title: 'FLEXIBLE AND FAST WORKING',
+      desc: 'Cara kerja dan sistem yang di terapkan di natasae bisa cepat dan menyesuaikan dengan waktu klien'
+    },
+    {
+      no: '02',
+      title: 'REALISTIC',
+      desc: 'Design yang di rencanakan oleh natasae dapat di pastikan hingga terbangun'
+    },
+    {
+      no: '03',
+      title: 'INNOVATIVE',
+      desc: 'Rata rata Designer natasae berusia muda dan memiliki pemikiran inofatif dan gagasan yang selalu uptodate'
+    }
+  ]
+
+  const values2 = [
+    {
+      no: '04',
+      title: 'EFFICIENT AND EXCELLENT SERVICE',
+      desc: 'karena natasae merupakan jasa design yang mengutamakan service yang baik dengan sistem yang efektif dan efisien'
+    },
+    {
+      no: '05',
+      title: 'NEAR',
+      desc: 'Natasae dapat berkomunikasi layaknya seperti teman dekat sendiri untuk membanguan personal in touch lebih dekat'
+    },
+    {
+      no: '06',
+      title: 'DIFFERENT',
+      desc: 'Design dan sistem yang natasae bangun bisa menjadi pembeda dengan jasa design yang lainnya'
+    }
+  ]
 
   return (
     <section className='relative bg-neutral-950 text-white py-12'>
@@ -27,7 +62,7 @@ const About = () => {
           className="flex flex-1 flex-col items-center lg:items-start gap-4 py-4"
           data-aos="fade-up"
         >
-          <h2 className='text-bold text-4xl mb-4 border-l-4 border-red-700 px-2'>Tentang Natasae Studio</h2>
+          <h2 className='font-bold text-4xl md:text-5xl mb-4 border-l-4 border-red-700 px-2'>Tentang Natasae Studio</h2>
           <p className='text-gray-100'>
           <span className='font-bold'>PT NATASAE PADU SERASI </span>merupakan Perusahaan yang bergerak di bidang Jasa Desain Arsitektur dan Interior yang menerapkan konsep <span className='font-bold'>LESS IS MORE</span>  "Keindahan dalam Kesederhanaan". 
           </p>
@@ -50,7 +85,7 @@ const About = () => {
       {/* Location Section */}
       <div className='container mt-24'>
         <div className='flex justify-start py-8'>
-          <h2 className='text-bold text-3xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Lokasi</h2>
+          <h2 className='font-bold text-4xl md:text-5xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Lokasi</h2>
         </div>
         <div className='grid grid-cols-2'>
           <div className="items-center justify-center flex col-span-1 " data-aos="fade-up">
@@ -69,7 +104,7 @@ const About = () => {
       {/* Vision & Mission Section */}
       <div className='container mt-24'>
         <dir className='flex justify-center py-8'>
-          <h2 className='text-bold text-3xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Visi & Misi</h2>
+          <h2 className='font-bold text-4xl md:text-5xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Visi & Misi</h2>
         </dir>
         <div className='flex flex-col lg:flex-row gap-12'>
           <div className='flex flex-col lg:flex-row gap-4 lg:gap-8 flex-1' data-aos="fade-right">
@@ -96,7 +131,7 @@ const About = () => {
       {/* Motto Section */}
       <div className='container mt-24 text-center'>
         <div className='flex justify-center py-8'>
-          <h2 className='text-bold text-3xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Slogan</h2>
+          <h2 className='font-bold text-4xl md:text-5xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Slogan</h2>
         </div>
         <p className='text-gray-100 italic text-xl' data-aos="fade-up">
         "Kenyamanan ruang, tumbuh didalam keserasiaan antara kebutuhan dan keinginan ruang hunian anda"
@@ -106,9 +141,9 @@ const About = () => {
      
 
       {/* Our Team Section */}
-      <div className='container mt-24 pb-24'>
+      {/* <div className='container mt-24 pb-24'>
         <div className='flex justify-center py-8'>
-          <h2 className='text-bold text-3xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Tim Kami</h2>
+          <h2 className='font-bold text-3xl mb-4 border-l-4 border-red-700 px-2' data-aos="fade-up">Tim Kami</h2>
         </div>        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12'>
           {teamMembers.map((member, index) => (
             <Card
@@ -139,7 +174,48 @@ const About = () => {
             </Card>
           ))}
         </div>
+      </div> */}
+
+      {/* Value Section */}
+      <div className='container mt-24'>
+        <div className='grid md:grid-cols-5 grid-flow-row space-y-12'>          
+          <div className='col-span-1 pt-12'>
+            <h2 className='font-bold text-4xl md:text-5xl border-l-4 border-red-700 px-2 md:text-left text-center' data-aos="fade-up">Value</h2>
+          </div>
+          <div className='col-span-2 space-y-8' data-aos="fade-up">
+            {values1.map((value, index) => (
+              <div className='grid grid-cols-5 md:h-40' key={index}>
+                <h1 className='text-6xl col-span-1'>{value.no}</h1>
+                <div className='col-span-4'>
+                  <p className='text-gray-100 text-2xl text-left px-4 font-bold mb-2'>
+                  {value.title}
+                  </p>
+                  <p className='text-gray-100 text-left px-4'>
+                  {value.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className='col-span-2 container space-y-8' data-aos="fade-up">
+            {values2.map((value, index) => (
+                <div className='grid grid-cols-5 md:h-40' key={index}>
+                  <h1 className='text-6xl col-span-1'>{value.no}</h1>
+                  <div className='col-span-4'>
+                    <p className='text-gray-100 text-2xl text-left px-4 font-bold mb-2'>
+                    {value.title}
+                    </p>
+                    <p className='text-gray-100 text-left px-4'>
+                    {value.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        
       </div>
+
     </section>
   )
 }

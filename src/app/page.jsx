@@ -9,6 +9,8 @@ import Head from "next/head";
 import portolist from "@/data/data.json"
 import PortoCarousel from '@/components/PortoCarousel';
 import SEO from '@/components/pages/SEO';
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
+
 
 export default function Home() {
   useGSAP(() => {
@@ -68,7 +70,16 @@ export default function Home() {
         image="https://www.natasaestudio.com/preview.png"
         url="https://natasaestudio.com/"
       />
-      
+            <FloatingWhatsApp
+            // allowClickAway="true"
+            chatMessage='Hai! ada yang bisa kami bantu?'
+            accountName='Natasae Studio'
+            phoneNumber='6281111119572'
+            messageDelay={1}
+            avatar='/natasase-logo-2.png'
+            className='text-black'
+            />
+
      <main>
       <div className="preloader">
         <p className="preloader__text space-y-2 italic">

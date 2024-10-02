@@ -14,7 +14,7 @@ const PortoCarousel = () => {
       {portolist.map((data, index) => (
         <div key={index} className="flex-shrink-0">
           <Image
-            src={`${data.imgDir}/1.png`}
+            src={`${data.imgDir}/0.png`}
             alt={`Project ${index + 1}`}
             className="h-64 w-auto object-cover mx-2"
             width="768" height="400"
