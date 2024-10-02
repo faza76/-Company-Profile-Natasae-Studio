@@ -1,3 +1,4 @@
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 //Components
@@ -5,6 +6,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTansition";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import Whatsapp from "@/components/ui/whatsapp";
 
 
 const inter = Inter({ 
@@ -70,6 +72,7 @@ export default function RootLayout({ children }) {
       </PageTransition> */}
       {children}
       <Footer/>
+      <Whatsapp />
       </body>
       
     </html>
