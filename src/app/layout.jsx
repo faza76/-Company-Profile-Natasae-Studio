@@ -1,5 +1,4 @@
-
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 //Components
 import Header from "@/components/Header";
@@ -8,11 +7,17 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import Whatsapp from "@/components/ui/whatsapp";
 
-
 const inter = Inter({ 
   subsets: ["latin"], 
   weight: ["100", "200", "300", "400" ,"500", "600", "700", "800"],
-  variable: "--font-inter" });
+  variable: "--font-inter" 
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair'
+});
 
 export const metadata = {
   title: "Natasae Studio",
@@ -43,10 +48,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-
   return (
-    
     <html lang="en">
       <Head>
         <title>Your Website Title</title>
@@ -65,16 +67,12 @@ export default function RootLayout({ children }) {
         <meta name="twitter:description" content="This is a description of your website." />
         <meta name="twitter:image" content="/images/preview.jpg" />
       </Head>
-      <body className={inter.className}>
-      <Header />
-      {/* <PageTransition>
-
-      </PageTransition> */}
-      {children}
-      <Footer/>
-      <Whatsapp />
+      <body className={`${inter.variable} ${playfair.variable}`}>
+        <Header />
+        {children}
+        <Footer/>
+        <Whatsapp />
       </body>
-      
     </html>
   );
 }

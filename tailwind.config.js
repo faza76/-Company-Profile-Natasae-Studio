@@ -21,12 +21,13 @@ module.exports = {
     },
     fontFamily: {
       primary: "var(--font-inter)",
+      playfair: "var(--font-playfair)",
     },
     extend: {
       colors: {
         primary: '#070707',
         accent: {
-          DEFAULT: "#FFFFFF",
+          DEFAULT: "#D2B48C",
           hover: "000000",
         }
       },

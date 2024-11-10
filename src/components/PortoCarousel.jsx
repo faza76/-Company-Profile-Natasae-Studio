@@ -7,7 +7,7 @@ const PortoCarousel = () => {
   return (
     <div className="overflow-hidden relative pt-12">
         <div className="container flex py-8">
-            <h2 className='text-bold text-4xl mb-4 border-l-4 border-red-700 px-2'>Proyek Terbaik Kami</h2>
+            <h2 className='font-thin font-playfair text-4xl mb-4 border-l-4 border-accent px-2'>Proyek Terbaik Kami</h2>
         </div>
     <div className="flex w-max animate-marquee">
         <a href="/portfolio" className="flex w-max animate-marquee">

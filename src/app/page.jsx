@@ -10,7 +10,7 @@ import portolist from "@/data/data.json"
 import PortoCarousel from '@/components/PortoCarousel';
 import SEO from '@/components/pages/SEO';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
-
+import Link from 'next/link';
 
 export default function Home() {
   useGSAP(() => {
@@ -83,23 +83,49 @@ export default function Home() {
      <main>
       <div className="preloader">
         <p className="preloader__text space-y-2 italic">
-          <span className='text-md md:text-2xl font-normal text-center text-nowrap'>"Kenyamanan ruang, tumbuh didalam</span>
-          <span className='text-md md:text-2xl font-semibold text-center'>keserasiaan antara kebutuhan dan</span>
-          <span className='text-md md:text-2xl font-normal text-center'>keinginan ruang hunian anda"</span>
+          <span className='text-md text-accent md:text-2xl font-normal text-center text-nowrap'>"Kenyamanan ruang, tumbuh didalam</span>
+          <span className='text-md text-accent md:text-2xl font-semibold text-center'>keserasiaan antara kebutuhan dan</span>
+          <span className='text-md text-accent md:text-2xl font-normal text-center'>keinginan ruang hunian anda"</span>
         </p>
         <div className="preloader__background"></div>
       </div>
       {/* <div> */}
-        <div className='absolute w-full h-[80vh] items-center bg-[url("/hero-image.jpeg")] bg-cover object-cover bg-fixed brightness-50'>
+        <div className='absolute w-full h-[90vh] items-center bg-[url("/hero-image.jpeg")] bg-cover bg-center bg-fixed brightness-50'>
+          <div className='absolute inset-0 bg-gradient-to-b from-black/50 to-transparent'></div>
         </div>
-        <div className='container sm:flex justify-center items-center h-[80vh] p-8 md:p-36 relative'>
-          <div className='md:flex justify-center items-center py-10 relative'>
-              <h1 className='text-6xl font-bold align-top text-right px-2'>Jasa Desain Arsitektur dan Interior</h1>
-              <div className='px-2 flex md:py-0 '>
-                <div className='px-2 py-16 md:py-24 border-l-4 border-red-800 hidden sm:block'>
-                </div>
-                <h1 className='text-md font-medium text-left justify-center hidden sm:block'>Kami memberikan <span className='font-bold'>Solusi</span>, <span className='font-bold'>Keinginan</span>, <span className='font-bold'>Harapan</span>, serta <span className='font-bold'>Kebutuhan</span> Dalam Mewujudkan Rumah Impian Anda.</h1>
-              </div>
+        <div className='container flex flex-col justify-center items-start h-[90vh] relative space-y-8'>
+          <div className='max-w-3xl space-y-6' data-aos="fade-up">
+            <p className='text-white opacity-75 text-sm'>ARCHITECTURE / INTERIOR</p>
+            <h1 className='text-4xl md:text-6xl lg:text-7xl font-playfair font-thin text-white leading-tight'>
+              Wujudkan Ruang Impian Anda Bersama Kami
+            </h1>
+            <div className='flex items-center space-x-4'>
+              <div className='w-20 h-1 bg-accent'></div>
+              <p className='text-lg md:text-xl text-white/90'>Jasa Desain Arsitektur dan Interior</p>
+            </div>
+            <p className='text-lg text-white/80 max-w-2xl'>
+              Kami memberikan <span className='font-bold text-accent'>Solusi</span>, 
+              <span className='font-bold text-accent'> Keinginan</span>, 
+              <span className='font-bold text-accent'> Harapan</span>, serta 
+              <span className='font-bold text-accent'> Kebutuhan</span> dalam mewujudkan ruang hunian yang sesuai dengan gaya hidup Anda.
+            </p>
+            <div className='flex flex-col sm:flex-row gap-4 pt-4'>
+              <Link href="/contact-us" className="w-full sm:w-auto">
+                <Button className="bg-accent hover:bg-accent/90 text-primary font-bold px-8 py-6 w-full sm:w-auto">
+                  Mulai Konsultasi
+                </Button>
+              </Link>
+              <Link href="/portfolio" className="w-full sm:w-auto">
+                <Button variant="outline" className="border-2 bg-white/10 border-white text-white hover:bg-white/10 px-8 py-6 w-full sm:w-auto">
+                  Lihat Portfolio
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'>
+            <div className='w-8 h-12 rounded-full border-2 border-white/50 flex justify-center items-start p-2'>
+              <div className='w-1 h-3 bg-white/50 rounded-full'></div>
+            </div>
           </div>
         </div>
       {/* </div> */}
@@ -114,16 +140,16 @@ export default function Home() {
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <iframe className='w-full h-[300px] lg:w-[400px] aspect-video' src="https://www.youtube.com/embed/r9jwGansp1E" title="Company Video"></iframe>
+          <iframe className='w-full h-[300px] lg:w-[400px] aspect-video' src="https://www.youtube.com/embed/2KjOBvr8frk?si=r06LC1VYvB_GG3JP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
           
           {/* Content 2*/}
           <div className="flex flex-1 flex-col items-center lg:items-start gap-4 py-4">
-            <h2 className='text-bold text-4xl mb-4 border-l-4 border-red-700 px-2'>About Us</h2>
-            <p className='text-gray-100'>
+            <h2 className='font-playfair text-4xl mb-4 border-l-4 border-accent px-2'>About Us</h2>
+            <p className='text-gray-300'>
             <span className='font-bold'>PT NATASAE PADU SERASI </span>merupakan Perusahaan yang bergerak di bidang Jasa Desain Arsitektur dan Interior yang menerapkan konsep <span className='font-bold'>LESS IS MORE</span>  "Keindahan dalam Kesederhanaan". 
             </p>
-            <p className='text-gray-100 pb-4'>
+            <p className='text-gray-300 pb-4'>
             Kami akan memberikan solusi, Keinginan, Harapan, Serta kebutuhan klien dalam mewujudkan rumah impian nya.
             </p>
             <a href="/about">
